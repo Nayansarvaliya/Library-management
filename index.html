@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="loader">
+    <img src="/img/qq.webp" alt="Loading...">
+  </div>
+  <div id="content" style="display: none;">
+    <div class="navbar">
+      <div class="container">
+        <div class="logo">
+          <h1 class="d-flex">
+            <a href="" class="text-decoration-none text-black fw-bold">
+              Book
+            </a>
+          </h1>
+        </div>
+        <div class="toggle-button" id="toggleButton">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="navbar-links mt-3" id="navbarLinks">
+          <ul class="m-auto">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Services.html">Books</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li>
+              <a href="#" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                <button class="btn btn-primary position-relative" id="cart-icon">
+                  <i class="fas fa-shopping-cart"></i> Cart
+                  <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                  </span>
+                </button>
+
+              </a>
+              <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+                aria-labelledby="staticBackdropLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title fw-bold" id="staticBackdropLabel">Shopping Cart</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div>
+                    <div class=" mt-5" id="cartContainer">
+
+
+                      <ul id="cartItemsList" class="list-group"></ul>
+                      <div class="mt-3 d-flex justify-content-between">
+                        <span>Total Items: <span id="totalItems">0</span></span>
+                        <span>Total Price: Rs. <span id="totalPrice">0</span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <section class="header">
+      <div class="container">
+        <div class="header-title">
+          <div class="row">
+            <div class="col-lg-8" style="margin-top: 130px;">
+              <div class="text-title">
+                <p>Up to 30% off</p>
+                <h1>Get Your New Book
+                  With The Best Price</h1>
+                <button class="btn btn-outline-secondary">Shop Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="image-container">
+                <img src="img/hero-girl.png" alt="" class="w-100">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      
+    </section>
+    <section class="card-sec mt-5 mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                <img src="img/05.png" alt="" class="w-100">
+                <div class="card-txt">
+                  <h4 class="fw-bold mt-2">The Lost Hero</h4>
+                  <p>by Rick Riordan</p>
+                  <div class="card-txt-title d-flex">
+                    
+                    <h5 class="me-4 fw-bold">Rs.325</h5>
+                    <h5 class=" text-decoration-line-through">Rs.699</h5>
+                  </div>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    View More
+                  </button>
+                  <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#checkoutSection">Checkout</button>
+
+                  <div id="checkoutSection" class="modal fade" tabindex="-1" aria-labelledby="checkoutLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="checkoutLabel">Checkout</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Due Date: <input type="date" id="dueDateInput" /></p>
+                              <p>Late Fee: Rs. <span id="lateFee">0</span></p>
+
+                                <p>Total Items: <span id="checkoutTotalItems">0</span></p>
+                                <p>Total Price: Rs. <span id="checkoutTotalPrice">0</span></p>
+                                <p>Thank you for shopping with us!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="confirmCheckout">Confirm Purchase</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row">
+                            <div class="col-lg-6 ">
+                              <div class="modal-img1 justify-content-center d-flex">
+                                <img src="img/05.png" alt="" class="">
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="modal1-details">
+                                <h2 class="fw-bold">The Lost Hero (Heroes of Olympus Book 1)</h2>
+                                <p>by Rick Riordan</p>
+                                <div class="modal1-txt d-flex">
+                                  <p class="me-2">(Rating By Good Reads)</p>
+                                  <img src="img/S4.png" alt="">
+                                </div>
+                                <div class="modal2-txt d-flex">
+                                  <h6 class="text-decoration-line-through me-2 mt-auto ">Rs. 699 </h6>
+                                  <h5 class="text-danger fw-bold">Rs. 329</h5>
+                                  <h6 class="mt-auto fw-bold ms-2">Save 52%</h6>
+                                </div>
+                                <h5>Only 1 left in stock</h5>
+                                <h5>Binding: Paperback</h5>
+                                <h5>Condition: Gently Used</h5>
+
+                                <div class="modal1-button mt-3">
+                                  <button class="btn btn-success addToCartBtn" data-title="The Lost Hero"
+                                    data-price="330" data-max="5">Add to Cart</button>
+                                  <span class="text-danger d-none unavailable-text">Unavailable</span>
+
+                                </div>
+                                <h5 class="fw-bold mt-3">Delivery within 6-8 business days</h5>
+                                <div class="modal1-deliver d-flex mt-auto">
+                                  <div class="modal1-img">
+                                    <img src="img/Diamond.png" alt="" class="">
+                                    <p class="">Gently Used</p>
+                                  </div>
+                                  <div class="modal1-img ms-2">
+                                    <img src="img/shipping.png" alt="" class=" ">
+                                    <p class="">Ships In
+                                      1-2 Days</p>
+                                  </div>
+                                  <div class="modal1-img ms-2">
+                                    <img src="img/book.webp" alt="" class="">
+                                    <p class="">Original Books</p>
+                                  </div>
+                                  <div class="modal1-img ms-2">
+                                    <img src="img/Bookmark.png" alt="" class="">
+                                    <p class="">Free Bookmarks</p>
+                                  </div>
+                                </div>
+                                <div class="accordion" id="accordionPanelsStayOpenExample">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                      <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        Description
+                                      </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                      aria-labelledby="panelsStayOpen-headingOne">
+                                      <div class="accordion-body">
+                                        <p>JASON HAS A PROBLEM. He doesn’t remember anything before waking up in a bus
+                                          full of kids on a field trip. Apparently he has a girlfriend named Piper, and
+                                          his best friend is a guy named Leo. They’re all students at the Wilderness
+                                          School, a boarding school for “bad kids," as Leo puts it. What did Jason do to
+                                          end up here? And where is here, exactly? Jason doesn't know anything—except
+                                          that
+                                          everything seems very wrong. PIPER HAS A SECRET.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                      <button class="accordion-button collapsed fw-bold" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                        Other Details
+                                      </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                      aria-labelledby="panelsStayOpen-headingTwo">
+                                      <div class="accordion-body">
+                                        <ul>
+                                          <li>Author - Rick Riordan</li>
+                                          <li> Publisher - Puffin</li>
+                                          <li> Binding - Paperback</li>
+                                          <li>Language - English</li>
+                                          <li> Pages - 576</li>
+                                          <li>Condition - Gently Used</li>
+                                          <li> ISBN: 9780241335529</li>
+
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+</body>
+
+</html>
